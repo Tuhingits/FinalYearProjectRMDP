@@ -64,7 +64,7 @@ namespace Reduntant_Medicine_Donation_portal.Areas.Identities.Controllers
                     if (role.Contains("Administrator") == true)
                     {
                         _logger.LogInformation("User logged in.");
-                        return RedirectToAction("Index", "AdminDashboard", new { area = "Admin" });
+                        return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
                     }
                     else if (role.Contains("Executive") == true)
                     {

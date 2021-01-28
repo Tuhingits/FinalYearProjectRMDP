@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using MemberShip.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,16 +18,20 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
     {
         
         private readonly AppDbContext _context;
+        private ApplicationDbContext _dbContext;
 
-        public DonateMedicinesController(AppDbContext context)
+        public DonateMedicinesController(AppDbContext context, ApplicationDbContext dbContext)
         {
             _context = context;
+            _dbContext = dbContext;
         }
 
         // GET: DonateMedicines
+        
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DonateMedicines.ToListAsync());
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return View(await _context.DonateMedicines.Where(d => d.DonarId == UserId).ToListAsync());
         }
 
         // GET: DonateMedicines/Details/5
@@ -51,7 +56,6 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
         public IActionResult Create()
         {
             ViewBag.DonorID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
             return View();
         }
 

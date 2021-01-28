@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -46,6 +47,7 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
         // GET: Feedbacks/Create
         public IActionResult Create()
         {
+            ViewBag.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View();
         }
 
@@ -60,7 +62,7 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
             {
                 _context.Add(feedback);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create");
             }
             return View(feedback);
         }
