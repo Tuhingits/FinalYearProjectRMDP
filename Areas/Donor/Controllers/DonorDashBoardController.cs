@@ -14,7 +14,6 @@ namespace Reduntant_Medicine_Donation_portal.Areas.Donor.Controllers
     {
         public IActionResult Index()
         {
-
             var model = new DonorDashBoardModel();
             return View(model);
         }

@@ -8,7 +8,7 @@ namespace Reduntant_Medicine_Donation_portal.Models
     public class Feedback
     {
         public int Id { get; set; }
-        public string UserId { get; set; }
+        public string UserMail { get; set; }
         public string message { get; set; }
 
     }

@@ -290,3 +290,11 @@ D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\bin\Debug\
 D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Dashboard\Donations.cshtml.g.cs
+D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Dashboard\Feedbacks.cshtml.g.cs
+D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Organizer\Views\OrganizerDashBoard\Feedbackss.cshtml.g.cs
+D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Organizer\Views\Register\Registration.cshtml.g.cs
+D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Organizer\Views\OrganizerDashBoard\Donations.cshtml.g.cs
+D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Organizer\Views\OrganizerDashBoard\Edit.cshtml.g.cs
+D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Executive\Views\ExecutiveDashBoard\Donation.cshtml.g.cs
+D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Executive\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\Reduntant Medicine Donation portal\ReduntantMedicineDonationPortal\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs

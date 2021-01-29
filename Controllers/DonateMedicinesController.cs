@@ -64,7 +64,7 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,ExpireDate,Quantity,DonarId,OrgId")] DonateMedicine donateMedicine)
+        public async Task<IActionResult> Create([Bind("Id,Name,ExpireDate,Quantity,DonarId,OrgMail")] DonateMedicine donateMedicine)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,ExpireDate,Quantity,DonarId,OrgId")] DonateMedicine donateMedicine)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,ExpireDate,Quantity,DonarId,OrgMail,ExecutiveMail")] DonateMedicine donateMedicine)
         {
             if (id != donateMedicine.Id)
             {

@@ -53,14 +53,17 @@ namespace Reduntant_Medicine_Donation_portal.Migrations
                     b.Property<string>("DonarId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ExecutiveMail")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("ExpireDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrgId")
-                        .HasColumnType("int");
+                    b.Property<string>("OrgMail")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -116,7 +119,7 @@ namespace Reduntant_Medicine_Donation_portal.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserMail")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("message")

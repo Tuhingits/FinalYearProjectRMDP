@@ -1,7 +1,13 @@
 ﻿<nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
-        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
+
+
+        <li class="nav-item">
+            <a asp-area="Organizer" asp-controller="Register" asp-action="Registration"><p>Executive registration</p></a>
+        </li>
+
         <li class="nav-item">
             <a asp-area="" asp-controller="" asp-action="DashBoard"><p>DashBoard</p></a>
         </li>
@@ -16,7 +22,13 @@
 
 
         <li class="nav-item">
-            <a asp-area="" asp-controller="" asp-action=""><p>Give Feedback</p></a>
+            <a asp-area="Organizer" asp-controller="Feedbackss" asp-action="Create"><p>Give Feedback</p></a>
+        </li>
+
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
         </li>
 
     </ul>

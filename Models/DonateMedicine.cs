@@ -18,9 +18,8 @@ namespace Reduntant_Medicine_Donation_portal.Models
         public DateTime ExpireDate { get; set; }
         public int Quantity { get; set; }
         public string DonarId { get; set; }
-        public int OrgId { get; set; }
+        public string OrgMail { get; set; }
+        public string ExecutiveMail { get; set; }
 
-        //public IList<Organizer> Organizer { get; set; }
-        //public IList<ApplicationUser> ApplicationUser { get; set; }
     }
 }

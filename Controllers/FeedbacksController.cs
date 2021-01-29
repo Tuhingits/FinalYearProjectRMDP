@@ -47,7 +47,7 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
         // GET: Feedbacks/Create
         public IActionResult Create()
         {
-            ViewBag.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewBag.UserMail = User.FindFirstValue(ClaimTypes.Name);
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserId,message")] Feedback feedback)
+        public async Task<IActionResult> Create([Bind("Id,UserMail,message")] Feedback feedback)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UserId,message")] Feedback feedback)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UserMail,message")] Feedback feedback)
         {
             if (id != feedback.Id)
             {

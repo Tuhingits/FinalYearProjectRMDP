@@ -14,8 +14,8 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     @*<label asp-for="UserId" class="control-label"></label>*@
-                    <input type="hidden" asp-for="UserId" value="@ViewBag.UserId" class="form-control" />
-                    <span asp-validation-for="UserId" class="text-danger"></span>
+                    <input type="hidden" asp-for="UserMail" value="@ViewBag.UserMail" class="form-control" />
+                    <span asp-validation-for="UserMail" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="message" class="control-label"></label>
@@ -29,9 +29,7 @@
         </div>
     </div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
+ 
 </div>
 
 @section Scripts {

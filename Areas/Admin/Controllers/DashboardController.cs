@@ -32,5 +32,12 @@ namespace Reduntant_Medicine_Donation_portal.Areas.Admin.Controllers
         {
             return View(await _context.DonateMedicines.ToListAsync());
         }
+
+        public async Task<IActionResult> Feedbacks()
+        {
+            return View(await _context.Feedbacks.ToListAsync());
+        }
+
+      
     }
 }

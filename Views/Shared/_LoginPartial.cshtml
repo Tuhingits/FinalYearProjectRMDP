@@ -2,6 +2,7 @@
 @inject SignInManager<MemberShip.Entities.ApplicationUser> SignInManager
 @inject UserManager<MemberShip.Entities.ApplicationUser> UserManager
 
+
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
