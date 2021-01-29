@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="message" class="control-label"></label>
-                    <input asp-for="message" class="form-control" />
+                    <textarea asp-for="message" class="form-control"> </textarea>
                     <span asp-validation-for="message" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -27,9 +27,7 @@
                 </div>
             </form>
         </div>
-    </div>
-
- 
+    </div> 
 </div>
 
 @section Scripts {

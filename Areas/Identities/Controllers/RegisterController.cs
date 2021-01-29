@@ -66,26 +66,32 @@ namespace Reduntant_Medicine_Donation_portal.Areas.Identities.Controllers
                     var role = Input.USertype;
                     await _userManager.AddToRoleAsync(user, role);
                     _logger.LogInformation("User created a new account with password. Name: {0}",user.UserName);
-                    
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                    var callbackUrl = Url.Page(
-                        "/Account/ConfirmEmail",
-                        pageHandler: null,
-                        values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
-                        protocol: Request.Scheme);
 
-                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
-
-                    if (_userManager.Options.SignIn.RequireConfirmedAccount)
+                    var userId = await _userManager.FindByNameAsync(Input.Email);
+                    var roleId = await _userManager.GetRolesAsync(userId);
+                    if (roleId.Contains("Administrator") == true)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        _logger.LogInformation("User logged in.");
+                        return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
+                    }
+                    else if (roleId.Contains("Executive") == true)
+                    {
+                        _logger.LogInformation("User logged in.");
+                        return RedirectToAction("Index", "ExecutiveDashboard", new { area = "Executive" });
+                    }
+                    else if (roleId.Contains("Organization") == true)
+                    {
+                        _logger.LogInformation("User logged in.");
+                        return RedirectToAction("Index", "OrganizerDashBoard", new { area = "Organizer" });
+                    }
+                    else if (roleId.Contains("Donor") == true)
+                    {
+                        return RedirectToAction("Index", "DonorDashBoard", new { area = "Donor" });
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToAction(returnUrl);
+                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                        return RedirectToActionPermanent("Index");
                     }
                 }
                 foreach (var error in result.Errors)

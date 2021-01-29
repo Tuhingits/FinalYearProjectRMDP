@@ -26,9 +26,26 @@ namespace Reduntant_Medicine_Donation_portal.Areas.Organizer.Controllers
             var model = new OrganizerDashBoardModel();
             return View(model);
         }
-        public async Task<IActionResult> Feedbackss()
+        public IActionResult Create()
         {
-            return View(await _context.Feedbacks.ToListAsync());
+            ViewBag.UserMail = User.FindFirstValue(ClaimTypes.Name);
+            return View();
+        }
+
+        // POST: Feedbacks/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,UserMail,message")] Feedback feedback)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(feedback);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
+            }
+            return View(feedback);
         }
 
 

@@ -59,7 +59,7 @@ namespace Reduntant_Medicine_Donation_portal.Controllers
         public async Task<IActionResult> Create([Bind("Id,UserMail,message")] Feedback feedback)
         {
             if (ModelState.IsValid)
-            {
+            { 
                 _context.Add(feedback);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Create");
